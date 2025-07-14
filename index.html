@@ -15,6 +15,17 @@
         <anglish-box ng-model="anglishText" id="anglishDraft"></anglish-box>
       </div>
     </div>
+    <div class="footer">
+      <div class="container">
+        <p>Anglish is a reworking of English, as if the French had never overrun the British island in 1066, leaving the tongue less touched by far-away infloodings (French and also Latin and Greekish).</p>
+
+        <p>Anglish often feels more earthy, more grounded in the guts than English. For more on Anglish, see <a href="https://anglish.fandom.com/wiki/What_is_Anglish%3F" target="_blank">the Anglish moot</a>.</p>
+
+        <p>Heed that a bit of the loveliness of English, <a href="https://www.youtube.com/watch?v=NJYoqCDKoT4" target="_blank">betoken by Borges</a>, is that it has these two strains.  Trying your hand at Anglish is a good way to learn the darker, deeper, earthier one, which you can then bring into your English as it befits you.</p>
+
+        <p>This site was made for fun by Malcolm Ocean (<a href="https://malcolmocean.com" target="_blank">blog</a>, <a href="https://twitter.com/Malcolm_Ocean" target="_blank">twitter</a>). Fork <a href="https://github.com/malcolmocean/anglish-spellcheck/" target="_blank">on github</a>.</p>
+      </div> 
+    </div>
     <script crossorigin='anonymous' src="assets/js/lib/jquery-2.2.4.min.js"></script>
      <!-- v3 changes ajax callbacks from success to done &+ -->
       <script crossorigin='anonymous' src="assets/js/lib/jquery-ui-1.10.4.js"></script>
@@ -35,10 +46,10 @@
       const warning = document.createElement('div')
       warning.className = 'file-protocol-warning'
       warning.innerHTML = `
-        <strong>Notice:</strong> This page is being served using the <code>file://</code> protocol.<br>
-        For full functionality, please open a terminal, navigate to this directory, and run:<br>
-        <code>npx http-server</code><br>
-        Then open the provided <code>http://localhost:8080</code> link in your browser.
+        <strong>Heed:</strong> This side is being dished using the <code>file://</code> protocol.<br>
+        For it to work, open a terminal, steer to this folder, and run:<br>
+        <code>http-server</code> or <code>python3 -m http.server</code><br>
+        Then open the provided <code>http://localhost:8080</code> link in your web crawler.
       `
       document.body.insertBefore(warning, document.body.firstChild)
     }

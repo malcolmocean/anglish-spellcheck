@@ -126,3 +126,11 @@ table td {
   margin-right: auto;
   text-align: center;
 }
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.footer p {font-size: 14px}
