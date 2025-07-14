@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Program with Word Validation</title>
+    <style>
+        .invalid {
+            color: red;
+        }
+    </style>
+    <script>
+        const dictionary = {
+            "teh": "the",
+            "recieve": "receive",
+            "definately": "definitely"
+        };
+
+        function validateInput(input) {
+            const words = input.innerText.split(' ');
+            const invalidWords = words.filter(word => dictionary[word.toLowerCase()]);
+            let newText = '';
+            let isSendAllowed = true;
+
+            words.forEach((word, index) => {
+                const correctedWord = dictionary[word.toLowerCase()];
+                if (correctedWord) {
+                    newText += `<span class="invalid">${word}</span>`;
+                    isSendAllowed = false;
+                } else {
+                    newText += word;
+                }
+
+                if (index < words.length - 1) {
+                    newText += ' ';
+                }
+            });
+
+            input.innerHTML = newText;
+            return isSendAllowed;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("messageInput");
+            const isSendAllowed = validateInput(input);
+
+            if (isSendAllowed) {
+                const messages = document.getElementById("messages");
+                const message = document.createElement("li");
+                message.textContent = input.innerText;
+                messages.appendChild(message);
+                input.innerHTML = '';
+            }
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Chat Program</h1>
+    <ul id="messages"></ul>
+    <div id="messageInput" contentEditable="true" oninput="validateInput(this)" onkeypress="handleKeyPress(event)" style="border: 1px solid black; padding: 5px; min-height: 20px;" placeholder="Type your message here..."></div>
+    <button onclick="sendMessage()">Send</button>
+</body>
+</html>

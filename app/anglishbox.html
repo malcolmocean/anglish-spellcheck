@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta property="og:title" content="Anglish" />
+    <link rel='stylesheet' href="assets/bootstrap/css/bootstrap.css">
+    <link rel='stylesheet' href="assets/bootstrap/css/flat-ui.css">
+    <link rel='stylesheet' href="assets/css/style.css">
+    <title>Anglish</title>
+  </head>
+  <body ng-app="anglish">
+    <div ng-controller="AngCtrl">
+      <div class='container'>
+        <h1>How's your Anglish?</h1>
+        <anglish-box ng-model="anglishText" id="anglishDraft"></colored-intentions>
+      </div>
+    </div>
+    <script crossorigin='anonymous' src="assets/js/lib/jquery-2.2.4.min.js"></script>
+     <!-- v3 changes ajax callbacks from success to done &+ -->
+      <script crossorigin='anonymous' src="assets/js/lib/jquery-ui-1.10.4.js"></script>
+    <script crossorigin='anonymous' src="assets/js/lib/angular.min.js"></script>
+    <script type="text/javascript">
+      var app = angular.module("anglish", [])
+      app.config(function ($interpolateProvider) {
+          $interpolateProvider.startSymbol('{[{').endSymbol('}]}')
+        }
+      )
+      app.controller('AngCtrl', function ($scope, $http) {
+        console.log('AngCtrl')
+      })
+    </script>
+    <script crossorigin='anonymous' src="assets/js/anglish-box.js"></script>
+  </body>
+</html>

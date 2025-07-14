@@ -1,0 +1,114 @@
+/*
+.plaintext-intentions,
+.colored-intentions {
+  font-weight: bold;
+}*/
+.colored-intentions {
+  min-height: 160px;
+  padding-bottom: 0;
+  position: absolute;
+  top: 0px;
+  background: rgba(255,255,255,0.5);
+  border: 2px solid transparent !important;
+    /* TODO it seems that this doesn't have precisely the same size as the plaintext ones */
+  /*border-color: blue;*/
+  z-index: 400;
+  word-wrap: break-word;
+}
+.colored-intentions {
+  background: white;
+}
+body.darktheme .colored-intentions {
+  background: black;
+}
+.has_wholeday .colored-intentions {
+  background: rgba(255,255,255,0.9);
+}
+body.darktheme.has_wholeday .colored-intentions {
+  background: black;
+}
+.darktheme .colored-intentions {
+  background-color: rgba(0,0,0,0.5);
+  color: #dcb;
+}
+body.darktheme #todosNextday .colored-intentions {
+  background-color: rgba(10,0,20,0.8);
+  box-shadow: 0 0 8px 5px #1119;
+}
+body.darktheme.has_wholeday #todosNextday .colored-intentions {
+  box-shadow: 0 0 8px 5px #0009;
+}
+
+.ci-container {
+  margin-bottom: 20px;
+  transition: height 50ms, min-height 50ms;
+  /*border: 2px solid red;*/
+  /*background: rgba(255,0,0,0.5);*/
+}
+/*
+.ci-container {
+  width: 518px;
+}*/
+
+.invalid-anglish {
+  color: #900;
+  border-bottom: 1px dashed red;
+}
+
+.plaintext-intentions {
+  z-index: 401;
+  position: absolute;
+  top: 0;
+  background: transparent;
+  color: transparent;
+/*  color: #0909;*/
+  resize: none;
+  /* max-height: 999999px; /* this is to try to fix font boosting */
+  max-height: 100%; /* this is to try to fix font boosting */
+}
+#boilerplateModal .plaintext-intentions {
+  /*max-height: 700px;*/
+}
+.darktheme .form-control:not(.plaintext-intentions) {
+  background-color: #111;
+  color: #dcb;
+}
+textarea.plaintext-intentions:focus {
+  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.3);
+/*  border: 1px solid #999;*/
+/*  border-radius: 0;*/
+/*  border-color: transparent;*/
+}
+
+table {
+  width: 100%;
+}
+
+table tbody tr:not(:last-child) {
+  border-bottom: 1px solid #999;
+}
+
+table td {
+  min-width: 20%;
+  white-space: pre-wrap;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.emptyline {
+  color: transparent;
+}
+
+
+#caret {
+  display: inline-block;
+  position: absolute;
+  border-left: 1px solid #000;
+  background: transparent;
+  width: 1px;
+  height: 1.467em;
+  /* same as line-height in form-control */
+  /*height: 22px;*/
+  animation:blinking 1.2s infinite;
+}
+#caret[hidden] { display: none }
