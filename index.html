@@ -12,7 +12,7 @@
     <div ng-controller="AngCtrl">
       <div class='container'>
         <h1>How's your Anglish?</h1>
-        <anglish-box ng-model="anglishText" id="anglishDraft"></colored-intentions>
+        <anglish-box ng-model="anglishText" id="anglishDraft"></anglish-box>
       </div>
     </div>
     <script crossorigin='anonymous' src="assets/js/lib/jquery-2.2.4.min.js"></script>
@@ -30,5 +30,18 @@
       })
     </script>
     <script crossorigin='anonymous' src="assets/js/anglish-box.js"></script>
+  <script>
+    if (window.location.protocol === 'file:') {
+      const warning = document.createElement('div')
+      warning.className = 'file-protocol-warning'
+      warning.innerHTML = `
+        <strong>Notice:</strong> This page is being served using the <code>file://</code> protocol.<br>
+        For full functionality, please open a terminal, navigate to this directory, and run:<br>
+        <code>npx http-server</code><br>
+        Then open the provided <code>http://localhost:8080</code> link in your browser.
+      `
+      document.body.insertBefore(warning, document.body.firstChild)
+    }
+  </script>
   </body>
 </html>
